@@ -15,7 +15,9 @@ jobs:
     - name: Build the Docker image
       uses: actions/docker-build-push@v5
       with:
-          image: pavneetkaur15/dockerpavneet1
+          image: pavneetkaur15
+/
+dockerpavneet1
           registry: docker.io
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
