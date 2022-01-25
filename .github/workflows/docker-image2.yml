@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      uses: mr-smithers-excellent/docker-build-push@v5
+      with:
+          image: pavneetkaur15/dockerpavneet1
+          registry: docker.io
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+display:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print a value
+        run: echo Hello from another job
+        
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo Hello
