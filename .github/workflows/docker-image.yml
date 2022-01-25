@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      uses: uses/docker-build-push@v5
+      uses: actions/docker-build-push@v5
       with:
           image: pavneetkaur15/dockerpavneet1
           registry: docker.io
