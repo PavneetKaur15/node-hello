@@ -5,6 +5,7 @@
 //}
 // Declarative not yet implemented //
 // Declarative //
+// Declarative //
 pipeline {
     agent any
 
@@ -14,11 +15,27 @@ pipeline {
                 echo 'Building..'
             }
         }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
     }
 }
 // Script //
 node {
     stage('Build') {
         echo 'Building....'
+    }
+    stage('Test') {
+        echo 'Building....'
+    }
+    stage('Deploy') {
+        echo 'Deploying....'
     }
 }
