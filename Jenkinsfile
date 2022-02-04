@@ -8,23 +8,28 @@
 // Declarative //
 pipeline {
     agent none
-
-    stages {
-        stage('Build') {
-            agent {
-                        label "linux"
-                    }
-            steps {
-                echo 'Building..'
+     stages {
+        stage('Run Tests') {
+            parallel {
+                 stages {
+                         stage('Build') {
+                             agent {
+                                        label "linux"
+                             }
+                             steps {
+                                     echo 'Building..'
+                             }
+                         }
+                         stage('Test') {
+                                        agent {
+                                         label "Docker"
+                             }
+                             steps {
+                                      echo 'Testing..'
+                             }
+                         }
+                  }
             }
-        }
-        stage('Test') {
-            agent {
-                        label "Docker"
-                    }
-            steps {
-                echo 'Testing..'
-            }
-        }
-    }
 }
+
+    
