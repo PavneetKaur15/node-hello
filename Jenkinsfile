@@ -20,7 +20,7 @@ pipeline {
         }
         stage('Test') {
             agent {
-                        label "linux"
+                        label "Docker"
                     }
             steps {
                 echo 'Testing..'
