@@ -7,7 +7,7 @@
 // Declarative //
 // Declarative //
 pipeline {
-    agent any
+    agent linux
 
     stages {
         stage('Build') {
@@ -20,22 +20,5 @@ pipeline {
                 echo 'Testing..'
             }
         }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-            }
-        }
-    }
-}
-// Script //
-node {
-    stage('Build') {
-        echo 'Building....'
-    }
-    stage('Test') {
-        echo 'Building....'
-    }
-    stage('Deploy') {
-        echo 'Deploying....'
     }
 }
