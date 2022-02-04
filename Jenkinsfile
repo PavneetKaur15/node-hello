@@ -9,8 +9,7 @@
 pipeline {
     agent none
     stages {
-        stage('Run Tests') {
-            
+        
                 stage('Test On Docker') {
                     agent {
                         label "docker"
@@ -20,6 +19,6 @@ pipeline {
                     }                    
                 }
             
-        }
+        
     }
 }
