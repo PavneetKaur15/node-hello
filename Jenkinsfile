@@ -11,12 +11,12 @@ pipeline {
     stages {
         stage('Run Tests') {
             parallel {
-                stage('Test On Windows') {
+                stage('Test On Linux') {
                     agent {
                         label "linux"
                     }
                 }
-                stage('Test On Linux') {
+                stage('Test On Docker') {
                     agent {
                         label "docker"
                     }
