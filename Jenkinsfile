@@ -15,11 +15,17 @@ pipeline {
                     agent {
                         label "linux"
                     }
+                    steps {
+                        echo "Running on Linux"
+                    }
                 }
                 stage('Test On Docker') {
                     agent {
                         label "docker"
                     }
+                    steps {
+                        echo "Running on Docker"
+                    }                    
                 }
             }
         }
