@@ -12,7 +12,7 @@ pipeline {
         
                 stage('Test On Docker') {
                     agent {
-                        label "docker"
+                        label "Docker"
                     }
                     steps {
                         echo "Running on Docker"
