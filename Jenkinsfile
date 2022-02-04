@@ -10,15 +10,7 @@ pipeline {
     agent none
     stages {
         stage('Run Tests') {
-            parallel {
-                stage('Test On Linux') {
-                    agent {
-                        label "linux"
-                    }
-                    steps {
-                        echo "Running on Linux"
-                    }
-                }
+            
                 stage('Test On Docker') {
                     agent {
                         label "docker"
@@ -27,7 +19,7 @@ pipeline {
                         echo "Running on Docker"
                     }                    
                 }
-            }
+            
         }
     }
 }
