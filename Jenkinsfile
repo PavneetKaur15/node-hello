@@ -6,27 +6,19 @@
 // Declarative not yet implemented //
 // Declarative //
 // Declarative //
+// Declarative //
 pipeline {
-    agent none
+    agent any
+
     stages {
-        stage('Run Tests') {
-            parallel {
-                stage('Test On Linux') {
-                    agent {
-                        label "linux"
-                    }
-                    steps {
-                        echo "Running on Linux"
-                    }
-                }
-                stage('Test On Docker') {
-                    agent {
-                        label "Docker"
-                    }
-                    steps {
-                        echo "Running on Docker"
-                    }                    
-                }
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing..'
             }
         }
     }
